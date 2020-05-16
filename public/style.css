@@ -1,0 +1,97 @@
+body {
+  outline: 2px blue;
+  font-family: Arial;
+  font-size: 14px;
+  font-color: #484848;
+}
+
+h1 {
+  font: Arial;
+}
+
+div.page {
+  padding: 10px;
+  font: Arial;
+}
+
+div.header {
+  background-color: #B8B8B8;
+  padding: 10px;
+  color: #484848; 
+}
+
+# Betting Page
+
+div.topLeft {
+  float: left;
+  width: 67%;
+}
+
+div.topRight {
+  float: right; 
+  border: 2px blue;
+  width: 33%;
+}
+
+div.bottom {
+  float: left;
+  width: 100%;
+}
+
+div.totals {
+  border: 1px solid #007acc;  
+  
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#submit {
+  background-color: #FFF;
+}
+
+#logout {
+  background-color: #FFF;
+  float: left;  
+}
+
+#betButton {
+  margin-left: 220px;
+  background-color: #FFF;
+}
+
+/* Login page */
+
+form.login {
+  font-family: Arial; 
+  font-size: 24px; 
+  font-color: #484848;
+}
+
+input {
+  border: 1px solid #007acc;
+  margin: 10px;
+  margin-right: 100px;
+}
+
+	
+
+#loginButton {
+  margin-left: 220px;
+  font-size: 24px;
+  border: 1px solid #007acc;
+  background-color: #FFFFFF;
+}
+

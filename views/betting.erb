@@ -1,0 +1,56 @@
+<div class="page">
+<p> <%= @message %> </p>
+<p>place your bet on dice number (1 to 6)</p>
+<div class="topLeft">
+  <!--<form method="POST" action='/bet/:stake/on/:number'>-->
+  <form method="POST" action='/betting'>
+    <label for='bet'>bet money </label><input type='text' name='stake' value="<%= @name %>"></input><br>
+    <label for='on'>on </label><input type='text' name='number'></input><br>
+    <input type='submit' name='submit' value='bet' id='betButton'></input>
+  </form>
+</div>
+<div class="topRight">
+  <!--<form>-->
+    <label for='totalWin'>total win </label><br><input id='win' value='<%= @totalWin %>'/><br> 
+    <label for='totalLoss'>total loss </label><br><input id='loss' value='<%= @totalLoss %>'/><br>
+    <label for='totalProfit'>total profit </label><br><input id='profit' value='<%= @totalProfit %>'/>
+  <!--</form>-->
+</div>
+<div class="bottom">
+  <div>
+  <p>account<p>
+  <div class="container">
+    <!--<form>-->
+      <div class="row">
+        <div class="column">
+          <p>total win</p>
+        </div>
+        <div class="column">
+          <p>total loss</p>
+        </div>
+        <div class="column">
+          <p>total profit</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <!--<input class='totals'></input>-->
+          <input id='accwin' value='<%= @accountWin %>'/>
+        </div>
+        <div class="column">
+          <!--<input class='totals'></input>-->
+          <input id='accloss' value='<%= @accountLoss %>'/>
+        </div>
+        <div class="column">
+          <!--<input class='totals'></input>-->
+          <input id='accprofit' value='<%= @accountProfit %>'/>
+        </div>
+      </div>
+    <!--</form>-->
+  </div>
+  </div>
+</div>
+<form method="POST" action='/logout'>
+  <input type='submit' value='Logout' id='logout'></input>
+</form>
+</div>
