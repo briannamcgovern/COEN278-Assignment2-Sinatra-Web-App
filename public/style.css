@@ -20,16 +20,28 @@ div.header {
   color: #484848; 
 }
 
+p {
+    margin: 10px;
+}
+
+label {
+    margin: 10px;
+}
+
 # Betting Page
+
+div.page {
+    width: 67%;
+}
 
 div.topLeft {
   float: left;
-  width: 67%;
+  width: 66%;
 }
 
 div.topRight {
-  float: right; 
-  border: 2px blue;
+  float: right;
+  border: 1px solid #007acc;
   width: 33%;
 }
 
@@ -38,12 +50,16 @@ div.bottom {
   width: 100%;
 }
 
+div.container {
+    border: 1px solid #007acc;
+}
+
 div.totals {
   border: 1px solid #007acc;  
   
 }
 
-* {
+.totals {
     box-sizing: border-box;
 }
 

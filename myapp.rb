@@ -1,33 +1,48 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require './bets'
+#require './bets'
+
+require 'dm-core'
+require 'dm-migrations'
+
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/bets.db")
+
+class Bets
+  include DataMapper::Resource
+  property :id, Serial
+  property :user, Text
+  property :accountWin, Integer
+  property :accountLoss, Integer
+  property :accountProfit, Integer
+end
+
+DataMapper.finalize
+Bets.auto_upgrade!
 
 configure do
   enable :sessions
-  set :username, "frank"
+  set :user, "frank"
   set :password, "sinatra"
-  #set :accountWin, '0'
-  #set :accountLoss, '0'
-  #set :accountProfit, '0'
 end
 
-configure :development do
-  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
-  DataMapper.auto_migrate!
-end
+#configure :development do
+#  DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/developments.db")
+#  DataMapper.auto_migrate!
+#end
 
-configure :production do
-  DataMapper.setup(:default, ENV['DATABASE_URL'])
-  DataMapper.auto_migrate!
-end
+#configure :production do
+#  DataMapper.setup(:default, ENV['DATABASE_URL'])
+#  DataMapper.auto_migrate!
+  #DataMapper.auto_upgrade!
+#end
 
-get '/' do 
+get '/' do
+  #@bets = Bets.new
   erb :login
 end
 
 get '/login' do 
   if session[:login]
-    #erb :betting
     redirect '/betting'
   end
 end
@@ -39,9 +54,19 @@ post '/login' do
     session[:totalWin] = 0
     session[:totalLoss] = 0
     session[:totalProfit] = 0
-    @accountWin = 0
-    @accountLoss = 0
-    @accountProfit = 0
+    @bet = Bets.first
+    
+    #bet = Bets.first
+    
+    #bet = Bets.first user: session[:name]
+    #bet.accountWin += session[:totalWin]
+    #bet.accountLoss += session[:totalLoss]
+    #bet.accountProfit += session[:totalProfit]
+    #@accountWin = bet.accountWin
+    #@accountLoss = bet.accountLoss
+    #@accountProfit = bet.accountProfit
+    #bet.save
+
     #erb :betting
     redirect '/betting'
   else
@@ -50,64 +75,47 @@ post '/login' do
   end
 end
 
-get '/logout' do 
-  # update
-  
-  @accountWin = session[:accountWin] + @totalWin
-  @accountLoss = session[:accountLoss] + @totalLoss
-  @accountProfit = session[:accountProfit] + @totalProfit
-
-  session[:totalWin] = nil
-  session[:totalLoss] = nil
-  session[:totalProfit] = nil
-  
-  #session[:username] = nil
-  #session[:name] = nil
-  #session[:message] = "You have logged out"
-  redirect '/login'
-end
-
 post '/logout' do
- #   @accountWin = session[:accountWin]
-  #  @accountLoss = session[:accountLoss]
-  #  @accountProfit = session[:accountProfit]
-  
-   #session[:accountWin] = session[:accountWin] + session[:totalWin]
-   #session[:accountLoss] = session[:accountLoss] + session[:totalLoss]
-   #session[:accountProfit] = session[:accountProfit] + session[:totalProfit]
+   #bets = BetHistory.get(params[:user])
+   #bets.update(params['accountWin'])
    
-   #session[:accountWin] =
+   #Bets.update(params[:accountWin])
+   #Bets.update(params[:accountLoss])
+   #Bets.update(params[:accountProfit])
+   #Bets.update
    
-   #@bets.accountWin = 1
-   #@bets.accountLoss = 2
-   #@bets.accountProfit = 3
+   bet = Bets.first
+   #bet = Bets.first user: session[:name]
+   bet.accountWin += session[:totalWin]
+   bet.accountLoss += session[:totalLoss]
+   bet.accountProfit += session[:totalProfit]
+   bet.save
    
    session[:totalWin] = nil
    session[:totalLoss] = nil
    session[:totalProfit] = nil
    
-    #session.clear
     redirect '/'
 end
 
 get '/betting' do
-  #erb :betting
-  
   @totalWin = session[:totalWin]
   @totalLoss = session[:totalLoss]
   @totalProfit = session[:totalProfit]
-  #@accountWin = session[:accountWin]
-  #@accountLoss = session[:accountLoss]
-  #@accountProfit = session[:accountProfit]
   
-  #@accountWin = bets.accountWin
-  #@accountLoss = bets.accountLoss
-  #@accountProfit = bets.accountProfit
-    
+  
+  bet = Bets.first
+  if bet
+      @accountWin = bet.accountWin
+      @accountLoss = bet.accountLoss
+      @accountProfit = bet.accountProfit
+  end
+       
   erb :betting
 end
 
-#'/bet/:stake/on/:number'
+
+
 post '/betting' do
   @stake = params[:stake].to_i
   number = params[:number].to_i
@@ -117,10 +125,17 @@ post '/betting' do
      @message = "The dice landed on #{roll}, you win #{10*@stake} dollars"
   else
     save_lost(@stake)
-    @message = %{The dice landed on #{roll}, you lost #{@stake} dollars, the total lost is #{session[:totalLoss]} dollars}
+    @message = %{The dice landed on #{roll}, you lost #{@stake} dollars, the total lost is #{session[:totalLoss]} dollars.}
   end
+  
+  bet = Bets.first
+  if bet
+      @accountWin = bet.accountWin
+      @accountLoss = bet.accountLoss
+      @accountProfit = bet.accountProfit
+  end
+  
   erb :betting
-  #redirect '/betting'
 end
 
 def save_win(money)
@@ -128,19 +143,15 @@ def save_win(money)
   session[:totalProfit] = session[:totalProfit] + money
   
   @totalWin = session[:totalWin]
+  @totalLoss = session[:totalLoss]
   @totalProfit = session[:totalProfit]
-  #count = (session[:win] || 0).to_i
-  #count += money
-  #session[:won] = count
 end
 
 def save_lost(money)
   session[:totalLoss] = session[:totalLoss] + money
-  session[:totalProfit] = session[:totalProfit] - money  
+  session[:totalProfit] = session[:totalProfit] - money
 
-  #count = (session[:lost] || 0).to_i
-  #count += money
-  #session[:lost] = count
+  @totalWin = session[:totalWin]
   @totalLoss = session[:totalLoss]
   @totalProfit = session[:totalProfit]
 end
