@@ -1,0 +1,26 @@
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/do_sqlite3-0.10.17/ext/do_sqlite3
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/bin/truffleruby -I /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/mri -r ./siteconf20200608-90884-r93e8g.rb extconf.rb
+checking for sqlite3.h... yes
+checking for sqlite3_open() in -lsqlite3... yes
+checking for localtime_r()... yes
+checking for gmtime_r()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_enable_load_extension()... no
+creating Makefile
+
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/do_sqlite3-0.10.17/ext/do_sqlite3
+make "DESTDIR=" clean
+
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/do_sqlite3-0.10.17/ext/do_sqlite3
+make "DESTDIR="
+compiling do_common.c
+compiling do_sqlite3.c
+compiling do_sqlite3_extension.c
+linking shared-object do_sqlite3/do_sqlite3.bundle
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/do_sqlite3-0.10.17/ext/do_sqlite3
+make "DESTDIR=" install
+install -c -p -m 755 do_sqlite3.bundle ./.gem.20200608-90884-1klrj15/do_sqlite3

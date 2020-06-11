@@ -1,0 +1,270 @@
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/eventmachine-1.2.7/ext
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/bin/truffleruby -I /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/mri -r ./siteconf20200608-90884-61zedw.rb extconf.rb
+checking for -lcrypto... yes
+checking for -lssl... yes
+checking for openssl/ssl.h... yes
+checking for openssl/err.h... yes
+checking for rb_trap_immediate in ruby.h,rubysig.h... no
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_without_gvl() in ruby/thread.h... yes
+checking for rb_thread_fd_select()... yes
+checking for rb_fdset_t in ruby/intern.h... yes
+checking for rb_wait_for_single_fd()... yes
+checking for rb_enable_interrupt()... no
+checking for rb_time_new()... yes
+checking for inotify_init() in sys/inotify.h... no
+checking for __NR_inotify_init in sys/syscall.h... no
+checking for writev() in sys/uio.h... yes
+checking for pipe2() in unistd.h... no
+checking for accept4() in sys/socket.h... no
+checking for SOCK_CLOEXEC in sys/socket.h... no
+checking for sys/event.h... yes
+checking for sys/queue.h... yes
+checking for clock_gettime()... yes
+checking for CLOCK_MONOTONIC_RAW in time.h... yes
+checking for CLOCK_MONOTONIC in time.h... yes
+CXXFLAGS=$(cxxflags) -Wall -Wextra -Wno-deprecated-declarations -Wno-ignored-qualifiers -Wno-unused-result -Wno-address
+creating Makefile
+
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR=" clean
+
+current directory: /Users/brimcg/Desktop/COEN278/Assignment2/vendor/bundle/truffleruby/20.0.0/gems/eventmachine-1.2.7/ext
+make "DESTDIR="
+compiling binder.cpp
+In file included from binder.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from binder.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from binder.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling cmain.cpp
+In file included from cmain.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from cmain.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from cmain.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling ed.cpp
+In file included from ed.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from ed.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from ed.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling em.cpp
+In file included from em.cpp:23:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from em.cpp:23:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from em.cpp:23:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling kb.cpp
+In file included from kb.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from kb.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from kb.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling page.cpp
+In file included from page.cpp:21:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from page.cpp:21:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from page.cpp:21:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling pipe.cpp
+In file included from pipe.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from pipe.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from pipe.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+4 warnings generated.
+compiling rubymain.cpp
+In file included from rubymain.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:902:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct RUBY_ALIGNAS(SIZEOF_VALUE) RBasic {
+^
+In file included from rubymain.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:24:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby.h:33:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1935:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/intern.h:56:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+In file included from rubymain.cpp:20:
+In file included from ./project.h:168:
+In file included from ./em.h:37:
+In file included from /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/io.h:27:
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/encoding.h:297:1: warning: empty struct has size 0 in C, size 1 in C++ [-Wextern-c-compat]
+struct rb_econv_t {};
+^
+rubymain.cpp:1220:8: error: assigning to 'VALUE' (aka 'void *') from incompatible type 'int'
+        arg = (NIL_P(arg)) ? -1 : NUM2INT (arg);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rubymain.cpp:1221:18: error: no matching function for call to 'evma_set_rlimit_nofile'
+        return INT2NUM (evma_set_rlimit_nofile (arg));
+                        ^~~~~~~~~~~~~~~~~~~~~~
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1587:31: note: expanded from macro 'INT2NUM'
+#define INT2NUM(x) RB_INT2NUM(x)
+                              ^
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:1564:41: note: expanded from macro 'RB_INT2NUM'
+# define RB_INT2NUM(v) RB_INT2FIX((int)(v))
+                                        ^
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/ruby.h:270:49: note: expanded from macro 'RB_INT2FIX'
+#define RB_INT2FIX(i) (VALUE)((((unsigned long)(i)) << 1) | RUBY_FIXNUM_FLAG)
+                                                ^
+./eventmachine.h:131:6: note: candidate function not viable: cannot convert argument of incomplete type 'VALUE' (aka 'void *') to 'int' for 1st argument
+        int evma_set_rlimit_nofile (int n_files);
+            ^
+4 warnings and 2 errors generated.
+make: *** [rubymain.o] Error 1
+
+make failed, exit code 2

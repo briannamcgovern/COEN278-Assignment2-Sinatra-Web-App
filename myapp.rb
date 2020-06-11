@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+#require 'erb'
 #require './bets'
 
 require 'dm-core'

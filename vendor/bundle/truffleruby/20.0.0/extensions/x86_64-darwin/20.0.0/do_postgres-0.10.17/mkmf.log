@@ -1,0 +1,349 @@
+have_library: checking for -lpq... -------------------- yes
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib     -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock   "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib     -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: 
+15: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for libpq-fe.h... -------------------- yes
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -E -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libpq-fe.h>
+/* end */
+
+--------------------
+
+have_header: checking for libpq/libpq-fs.h... -------------------- yes
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -E -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libpq/libpq-fs.h>
+/* end */
+
+--------------------
+
+have_header: checking for postgres.h... -------------------- yes
+
+In file included from conftest.c:3:
+In file included from /usr/local/include/postgresql/server/postgres.h:46:
+/usr/local/include/postgresql/server/c.h:1117:9: warning: '_' macro redefined [-Wmacro-redefined]
+#define _(x) gettext(x)
+        ^
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/defines.h:183:10: note: previous definition is here
+# define _(args) args
+         ^
+1 warning generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -E -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <postgres.h>
+/* end */
+
+--------------------
+
+have_header: checking for mb/pg_wchar.h... -------------------- yes
+
+In file included from conftest.c:3:
+In file included from /usr/local/include/postgresql/server/postgres.h:46:
+/usr/local/include/postgresql/server/c.h:1117:9: warning: '_' macro redefined [-Wmacro-redefined]
+#define _(x) gettext(x)
+        ^
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/defines.h:183:10: note: previous definition is here
+# define _(args) args
+         ^
+1 warning generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -E -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <postgres.h>
+4: #include <mb/pg_wchar.h>
+/* end */
+
+--------------------
+
+have_header: checking for catalog/pg_type.h... -------------------- yes
+
+In file included from conftest.c:3:
+In file included from /usr/local/include/postgresql/server/postgres.h:46:
+/usr/local/include/postgresql/server/c.h:1117:9: warning: '_' macro redefined [-Wmacro-redefined]
+#define _(x) gettext(x)
+        ^
+/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/defines.h:183:10: note: previous definition is here
+# define _(args) args
+         ^
+1 warning generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -E -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <postgres.h>
+4: #include <catalog/pg_type.h>
+/* end */
+
+--------------------
+
+have_func: checking for localtime_r()... -------------------- yes
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))localtime_r; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for gmtime_r()... -------------------- yes
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))gmtime_r; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for PQsetClientEncoding()... -------------------- yes
+
+conftest.c:14:57: error: use of undeclared identifier 'PQsetClientEncoding'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))PQsetClientEncoding; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'PQsetClientEncoding'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))PQsetClientEncoding; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+Process failed: #<Process::Status: pid 91038 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))PQsetClientEncoding; return !p; }
+/* end */
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void PQsetClientEncoding();
+15: int t(void) { PQsetClientEncoding(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for pg_encoding_to_char()... -------------------- yes
+
+conftest.c:14:57: error: use of undeclared identifier 'pg_encoding_to_char'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))pg_encoding_to_char; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'pg_encoding_to_char'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))pg_encoding_to_char; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+Process failed: #<Process::Status: pid 91052 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))pg_encoding_to_char; return !p; }
+/* end */
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void pg_encoding_to_char();
+15: int t(void) { pg_encoding_to_char(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQfreemem()... -------------------- yes
+
+conftest.c:14:57: error: use of undeclared identifier 'PQfreemem'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))PQfreemem; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'PQfreemem'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))PQfreemem; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+Process failed: #<Process::Status: pid 91071 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))PQfreemem; return !p; }
+/* end */
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void PQfreemem();
+15: int t(void) { PQfreemem(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_fd_select()... -------------------- yes
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/usr/local/include/postgresql/server    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lpq  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lpq   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_fd_select; return !p; }
+/* end */
+
+--------------------
+

@@ -1,0 +1,304 @@
+have_header: checking for sqlite3.h... -------------------- yes
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib     -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock   "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -E -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall   conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sqlite3.h>
+/* end */
+
+--------------------
+
+have_library: checking for sqlite3_open() in -lsqlite3... -------------------- yes
+
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_open'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_open'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib     -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+Process failed: #<Process::Status: pid 91192 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open; return !p; }
+/* end */
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib     -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void sqlite3_open();
+15: int t(void) { sqlite3_open(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for localtime_r()... -------------------- yes
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))localtime_r; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for gmtime_r()... -------------------- yes
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))gmtime_r; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_prepare_v2()... -------------------- yes
+
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_prepare_v2'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_prepare_v2'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+Process failed: #<Process::Status: pid 91229 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_prepare_v2; return !p; }
+/* end */
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void sqlite3_prepare_v2();
+15: int t(void) { sqlite3_prepare_v2(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_open_v2()... -------------------- yes
+
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_open_v2'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_open_v2'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+Process failed: #<Process::Status: pid 91243 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_open_v2; return !p; }
+/* end */
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+ld: warning: directory not found for option '-L/opt/local/lib'
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void sqlite3_open_v2();
+15: int t(void) { sqlite3_open_v2(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_enable_load_extension()... -------------------- no
+
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_enable_load_extension'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return !p; }
+                                                        ^
+1 error generated.
+conftest.c:14:57: error: use of undeclared identifier 'sqlite3_enable_load_extension'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return !p; }
+                                                        ^
+1 error generated.
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+Process failed: #<Process::Status: pid 91257 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return !p; }
+/* end */
+
+ld: warning: directory not found for option '-L/opt/local/lib'
+undef: _sqlite3_enable_load_extension
+Undefined symbols for architecture x86_64:
+  "_sqlite3_enable_load_extension", referenced from:
+      _t in cc-957a83.o
+ld: symbol(s) not found for architecture x86_64
+clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
+ld: warning: directory not found for option '-L/opt/local/lib'
+undef: _sqlite3_enable_load_extension
+Undefined symbols for architecture x86_64:
+  "_sqlite3_enable_load_extension", referenced from:
+      _t in cc-b7a1f5.o
+ld: symbol(s) not found for architecture x86_64
+clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
+"/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/bin/graalvm-native-clang -o conftest -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include/ruby/backward -I/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext/include -I. -I/usr/local/include -I/opt/local/include -I/usr/include    -I/usr/local/opt/openssl@1.1/include   -Wimplicit-function-declaration -Wno-int-conversion -Wno-int-to-pointer-cast -Wno-incompatible-pointer-types -Wno-format-invalid-specifier -Wno-format-extra-args -ferror-limit=500 -Wall  conftest.c  -L. -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib -L/usr/local/lib -L/opt/local/lib -L/usr/lib  -L/usr/local/opt/openssl@1.1/lib -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/sulong/native/lib    -lsqlite3  -L/Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -rpath /Users/brimcg/.rvm/rubies/truffleruby-20.0.0/lib/cext -ltruffleruby -lpolyglot-mock -lsqlite3   "
+Process failed: #<Process::Status: pid 91262 exit 1>
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return 0;
+13: }
+14: extern void sqlite3_enable_load_extension();
+15: int t(void) { sqlite3_enable_load_extension(); return 0; }
+/* end */
+
+--------------------
+
